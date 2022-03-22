@@ -1,0 +1,44 @@
+step1: create two vm instances in gcp account
+step2: in centos install git
+          yum install git -y 
+          git --version
+git version 2.31.1
+step3: install maven 
+         yum install maven -y
+      mvn -v
+Apache Maven 3.5.4 (Red Hat 3.5.4-5)
+Maven home: /usr/share/maven   
+      
+step4: install java 
+         yum install java -y
+         Java version: 1.8.0_322, vendor: Red Hat, Inc., runtime: /usr/
+lib/jvm/java-1.8.0-openjdk-1.8.0.322.b06-2.el8_5.x86_64/jre
+
+step5: install jenkins    
+
+sudo wget –O /etc/yum.repos.d/jenkins.rep
+o http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+
+yum install wget
+
+wget -O /etc/yum.repos.d/jenkins.repo htt
+p://pkg.jenkins-ci.org/redhat-stable/jenkins.repo
+
+yum repolist
+
+yum install jenkins -y
+
+sudo dnf install jenkins
+
+sudo systemctl start jenkins
+cd /var/lib/jenkins
+[root@master jenkins]# ls
+config.xml                        plugins
+hudson.model.UpdateCenter.xml     secret.key
+identity.key.enc                  secret.key.not-so-secret
+jenkins.telemetry.Correlator.xml  secrets
+jobs                              updates
+nodeMonitors.xml                  userContent
+nodes                             users
+         
+      
