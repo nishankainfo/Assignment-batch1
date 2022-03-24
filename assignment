@@ -1,0 +1,31 @@
+yum install git -y
+
+git --version
+
+sudo yum install java-1.8.0-openjdk-devel
+
+java -version
+
+yum install maven -y
+
+sudo cp /etc/profile /etc/profile_backup
+
+echo 'export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk' 
+|
+sudo tee -a /etc/profile
+
+echo $JAVA_HOME
+
+echo $JRE_HOME
+
+curl --silent --location http://pkg.jenkins-ci.org/redhat-stable/jenkins.repo | sudo tee /etc/yum.repos.d/jenkins.repo
+
+sudo rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+sudo yum install jenkins
+
+sudo systemctl start jenkins
+
+sudo systemctl enable jenkins
+
+sudo syatemctl status jenkins
